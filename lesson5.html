@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5 PAMOKA</title>
+    <style>
+      .wallpaper {
+        width: 100%;
+        height: 400px;
+        background: gray;
+      }
+      .button {
+        width: 100%;
+        background: lightgray;
+        bottom: 0px;
+        position: absolute;
+      }
+      .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      #start {
+        bottom: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="index.html">BACK</a>
+    <div class="wallpaper">
+      <h1 id="header" class="center">marke</h1>
+      <ul>
+        <li id="propertyOne">metai</li>
+        <li id="propertyTwo">variklis</li>
+      </ul>
+      <div class="button">
+        <h2 id="start" class="center">START PRESENTATION</h2>
+      </div>
+    </div>
+    <script>
+      let index = 0;
+      const cars = [
+        { brand: "audi", year: 2000, engine: ["2L", "2.5L", "3L"] },
+        { brand: "bmw", year: 1980, engine: ["2.5L", "3L", "4L"] },
+        { brand: "opel", year: 2010, engine: ["2L", "2.5L"] },
+      ];
+      const header = document.getElementById("header");
+      const propertyOne = document.getElementById("propertyOne");
+      const propertyTwo = document.getElementById("propertyTwo");
+      const start = document.getElementById("start");
+      start.addEventListener("click", function funkcija() {
+        header.innerHTML = cars[index]["brand"];
+        propertyOne.innerHTML = cars[index]["year"];
+        propertyTwo.innerHTML = cars[index]["engine"][0];
+        index++;
+      });
+    </script>
+  </body>
+</html>

@@ -5,112 +5,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <style>
-      .classwork {
-        max-width: 900px;
-        border: 1px solid black;
-      }
-      .gray {
-        background: lightgray;
-        padding: 10px;
-        margin: 10px;
-        border-radius: 20px;
-      }
-      .flex {
-        display: flex;
-      }
-      .navigation ul li {
-        display: inline;
-      }
-      .header {
-        justify-content: space-between;
-      }
-      .a-content {
-        width: 40%;
-      }
-      .s-around {
-        display: flex;
-        justify-content: space-around;
-      }
-      .text-center {
-        text-align: center;
-      }
-      .center {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-    </style>
   </head>
   <body>
     <div>
       <h3>Praejusiu pamoku darbai</h3>
       <ul>
         <li><a href="html/lesson3.html">3 pamoka</a></li>
+        <li><a href="html/lesson4.html">4 pamoka</a></li>
+        <li><a href="lesson5.html">5 pamoka</a></li>
       </ul>
     </div>
-    <h1>Pamokos darbas</h1>
-    <div class="classwork">
-      <header class="gray flex header">
-        <div class="center">LOGO</div>
-
-        <nav class="navigation">
-          <ul>
-            <li><a href="#">menu item 1</a></li>
-            <li><a href="#">menu item 2</a></li>
-            <li><a href="#">menu item 3</a></li>
-          </ul>
-        </nav>
-      </header>
-      <article class="gray">
-        <h1 class="text-center">SUPER HEADLINE</h1>
-        <p>
-          It is a long established fact that a reader will be distracted by the
-          readable content of a page when looking at its layout. The point of
-          using Lorem Ipsum is that it has a more-or-less normal distribution of
-          letters, as opposed to using
-        </p>
-      </article>
-      <article class="gray s-around">
-        <div class="a-content">
-          <h3 class="text-center">Headline</h3>
-          <p>
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout. The point
-            of using Lorem Ipsum is that it has a more-or-less normal
-            distribution of letters, as opposed to using
-          </p>
-        </div>
-        <img
-          class="a-content"
-          src="https://www.stockvault.net/data/2019/12/18/271882/thumb16.jpg"
-        />
-      </article>
-      <article class="gray s-around">
-        <img
-          class="a-content"
-          src="https://www.stockvault.net/data/2019/12/18/271882/thumb16.jpg"
-        />
-        <div class="a-content">
-          <h3 class="text-center">Headline</h3>
-          <ul>
-            <li>It is a long established fact</li>
-            <li>It is a long established fact</li>
-            <li>It is a long established fact</li>
-            <li>It is a long established fact</li>
-          </ul>
-        </div>
-      </article>
-      <footer class="gray">
-        <div class="navigation center">
-          <ul>
-            <li><a href="#">menu item 1</a></li>
-            <li><a href="#">menu item 2</a></li>
-            <li><a href="#">menu item 3</a></li>
-          </ul>
-        </div>
-        <div class="text-center">All rights reserved</div>
-      </footer>
+    <div>
+      <form>
+        <label for="fname">Vardas :</label>
+        <input type="text" id="fname" name="fname" /><br />
+        <label for="lname">Pavarde :</label>
+        <input type="text" id="lname" name="lname" /><br />
+        <label for="email">El pasto adresas :</label>
+        <input type="email" id="email" name="email" /><br />
+        <label for="phonenumber">Telefono numeris :</label>
+        <input type="number" id="phonenumber" name="phonenumber" /><br />
+        <label for="cars">Choose a car:</label>
+        <select id="rent" name="rent">
+          <option value="car">Auto nuoma</option>
+          <option value="bicycle">Dviracio nuoma</option>
+          <option value="suicide">Paspirtuko nuoma</option></select
+        ><br />
+        <label for="datefrom">Nuo kada nuomosites :</label>
+        <input type="date" id="datefrom" name="datefrom" /><br />
+        <label for="dateto">Iki kada nuomosites :</label>
+        <input type="date" id="dateto" name="dateto" /><br />
+        <label for="city">Issirinkite miesta:</label>
+        <select id="city" name="city">
+          <option value="vilnius">Vilnius</option>
+          <option value="kaunas">Kaunas</option>
+          <option value="klaipeda">Klaipeda</option></select
+        ><br />
+        <input type="submit" value="Submit" />
+      </form>
     </div>
   </body>
 </html>
