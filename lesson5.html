@@ -38,6 +38,7 @@
       </ul>
       <div class="button">
         <h2 id="start" class="center">START PRESENTATION</h2>
+        <h2 id="next" class="center">NEXT SLIDE</h2>
       </div>
     </div>
     <script>
@@ -50,8 +51,21 @@
       const header = document.getElementById("header");
       const propertyOne = document.getElementById("propertyOne");
       const propertyTwo = document.getElementById("propertyTwo");
+      const next = document.getElementById("next");
       const start = document.getElementById("start");
-      start.addEventListener("click", function funkcija() {
+      //## START EVENT LISTENER ##
+      start.addEventListener("click", function startb() {
+        for (let i = 0; i < cars.length; i++) {
+          setTimeout(() => {
+            header.innerHTML = cars[i]["brand"];
+            propertyOne.innerHTML = cars[i]["year"];
+            propertyTwo.innerHTML = cars[i]["engine"];
+          }, 1000 * i);
+        }
+        index++;
+      });
+      //## NEXT EVENT LISTENER ##
+      next.addEventListener("click", function nextb() {
         header.innerHTML = cars[index]["brand"];
         propertyOne.innerHTML = cars[index]["year"];
         propertyTwo.innerHTML = cars[index]["engine"][0];

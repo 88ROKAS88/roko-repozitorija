@@ -5,6 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      .border {
+        border: 1px solid black;
+        margin: 15px;
+        padding: 10px;
+        width: 80%;
+        border-radius: 5px;
+        position: relative;
+      }
+      .label {
+        position: absolute;
+        top: -14px;
+        background: white;
+        padding: 2px;
+      }
+      .margin {
+        margin-top: 40px;
+      }
+    </style>
   </head>
   <body>
     <div>
@@ -42,6 +61,34 @@
           <option value="klaipeda">Klaipeda</option></select
         ><br />
         <input type="submit" value="Submit" />
+      </form>
+    </div>
+    <div class="margin">
+      <form>
+        <div class="border">
+          <div class="label">Pasirinkite migtuka</div>
+          <input disabled type="radio" name="fav_language" value="HTML" />
+
+          <input disabled type="radio" name="fav_language" value="CSS" />
+
+          <input disabled type="radio" name="fav_language" value="JavaScript" />
+          <input
+            disabled
+            type="text"
+            id="fname"
+            name="fname"
+            placeholder="jusu vardas..."
+          />
+        </div>
+        <div class="border">
+          <div class="label">Pasirinkite kita migtuka</div>
+          <input type="radio" name="language" value="english" />
+          <input type="radio" name="language" value="spanish" />
+          <input type="radio" name="language" value="norvegian" />
+          <input disabled type="radio" name="language" value="russian" />
+          <input disabled type="radio" name="language" value="portugal" />
+        </div>
+        <input type="submit" value="siusti i serveri" />
       </form>
     </div>
   </body>
