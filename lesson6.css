@@ -1,7 +1,7 @@
 .section-one {
   border: 1px solid black;
   width: 100vw;
-  height: 100vh;
+  height: 50vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,7 +9,7 @@
 .section-two {
   border: 1px solid black;
   width: 100vw;
-  height: 100vh;
+  height: 50vh;
   display: flex;
 }
 .section-two div {
@@ -35,4 +35,8 @@
   border: 1px solid black;
   background: gray;
   border-radius: 5px;
+}
+img {
+  max-height: 100%;
+  max-width: 100%;
 }
