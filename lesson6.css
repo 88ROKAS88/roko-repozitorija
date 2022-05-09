@@ -1,0 +1,38 @@
+.section-one {
+  border: 1px solid black;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section-two {
+  border: 1px solid black;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+.section-two div {
+  height: 100%;
+  border: 1px solid black;
+  flex: 1 1 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.inline {
+  display: inline;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.center a {
+  margin: 30px;
+  padding: 10px;
+  border: 1px solid black;
+  background: gray;
+  border-radius: 5px;
+}
