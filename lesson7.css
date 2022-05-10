@@ -43,14 +43,31 @@
   text-decoration: none;
 }
 .nav3 ul li a:hover {
-  border: 1px solid black;
-  border-radius: 3px;
-  font-weight: 900;
   color: white;
   background: black;
-  padding: 4px;
-  margin: 3px;
 }
 .nav3 ul li {
   display: block;
+}
+
+/* FOURTH TASK OF LESSON 7 */
+.nav4 ul li a {
+  border: 1px solid blue;
+  border-radius: 3px;
+  font-weight: 900;
+  color: blue;
+  padding: 4px;
+  margin: 3px;
+  transition: 1s;
+  display: block;
+  width: 200px;
+  text-decoration: none;
+  text-align: center;
+}
+.nav4 ul li a:hover {
+  color: red;
+  border-color: red;
+}
+.nav4 ul li {
+  display: inline-block;
 }
