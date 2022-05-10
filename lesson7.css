@@ -1,3 +1,25 @@
 .nav1 ul li a:hover {
   color: red;
 }
+
+.nav2 ul li a {
+  border: 1px solid black;
+  border-radius: 3px;
+  background: lightgray;
+  color: black;
+  padding: 4px;
+  margin: 3px;
+  transition: 3s;
+}
+
+.nav2 ul li a:hover {
+  border: 1px solid black;
+  border-radius: 3px;
+  background: black;
+  color: white;
+  padding: 4px;
+  margin: 3px;
+}
+.nav2 ul li {
+  display: inline-block;
+}
