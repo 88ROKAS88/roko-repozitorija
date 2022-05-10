@@ -1,7 +1,9 @@
+/* FIRST TASK OF LESSON 7 */
 .nav1 ul li a:hover {
   color: red;
 }
 
+/* SECOND TASK OF LESSON 7 */
 .nav2 ul li a {
   border: 1px solid blue;
   border-radius: 3px;
@@ -14,7 +16,6 @@
   width: 200px;
   text-decoration: none;
 }
-
 .nav2 ul li a:hover {
   border: 1px solid blue;
   border-radius: 3px;
