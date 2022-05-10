@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>6 pamoka</title>
+
+    <style>
+      .section-one {
+        border: 1px solid black;
+        width: 100vw;
+        height: 50vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .section-two {
+        border: 1px solid black;
+        width: 100vw;
+        height: 50vh;
+        display: flex;
+      }
+      .section-two div {
+        height: 100%;
+        border: 1px solid black;
+        flex: 1 1 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .inline {
+        display: inline;
+      }
+      .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      .center a {
+        margin: 30px;
+        padding: 10px;
+        border: 1px solid black;
+        background: gray;
+        border-radius: 5px;
+      }
+      img {
+        max-height: 100%;
+        max-width: 100%;
+      }
+      /* ## ANTRA UZDUOTIS */
+      .parent-block {
+        width: 100vw;
+        height: 100vh;
+      }
+      .block-1-2 {
+        width: 300px;
+        height: 300px;
+        padding: 30px;
+        border: 4px solid red;
+        background: plum;
+      }
+
+      .block-3 {
+        width: 45%;
+        height: 100px;
+        background: lightgray;
+      }
+      .block-4 {
+        height: 250px;
+        width: 200px;
+        border: 5px solid green;
+        background: url("https://www.stockvault.net/data/2019/12/18/271882/thumb16.jpg");
+        background-size: contain;
+      }
+      .block-5 {
+        width: 200px;
+        padding: 10px;
+        border: 1px solid black;
+        border-radius: 5px;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="section-one">
+      <div class="center">
+        <h1 class="inline">Centre 1 h1 tekstas</h1>
+
+        <a href="../index.html"><span class="button">BACK</span></a>
+      </div>
+    </div>
+    <div class="section-two">
+      <div class="section-two-inner">
+        <img
+          src="https://images.pexels.com/photos/1459505/pexels-photo-1459505.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+          alt="Svyturys"
+        />
+      </div>
+      <div class="section-two-inner">
+        <img
+          src="https://images.pexels.com/photos/1459505/pexels-photo-1459505.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+          alt="Svyturys"
+        />
+      </div>
+      <div class="section-two-inner">
+        <img
+          src="https://images.pexels.com/photos/1459505/pexels-photo-1459505.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+          alt="Svyturys"
+        />
+      </div>
+    </div>
+    <div class="parent-block">
+      <div class="block-1-2"></div>
+      <div class="block-1-2"></div>
+      <div class="block-3"></div>
+      <div class="block-4"></div>
+      <button class="block-5"></button>
+    </div>
+  </body>
+</html>
