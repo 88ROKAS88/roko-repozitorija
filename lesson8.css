@@ -1,18 +1,53 @@
 /*
+##### ### TASK ONE ### #####
 iki 480px => red	
 nuo 480px iki 800px => green	
 nuo 800px => blue
 */
-body {
+.task-one {
   color: red;
 }
 @media only screen and (min-width: 480px) and (max-width: 800px) {
-  body {
+  .task-one {
     color: green;
   }
 }
 @media only screen and (min-width: 800px) {
-  body {
+  .task-one {
     color: blue;
+  }
+}
+/*
+##### ### SECOND TASK ### #####
+Desktop ekrane (nuo 1200px):		
+Plotis: 33.33% tėvinio elemento;		
+Aukštis 450px;		
+Spalva: žalia.	
+Tablet ekrane (nuo 786px):		
+Plotis: 50% tėvinio elemento;		
+Aukštis 350px;		
+Spalva: geltona.	
+Mobile ekrane (iki 785px) – default stilius (Mobile first development principas):		
+Plotis: 100% tėvinio elemento;		
+Aukštis 250px;		
+Spalva: mėlyna.
+*/
+.task-two {
+  width: 100%;
+  height: 250px;
+  background: blue;
+}
+@media only screen and (min-width: 786px) and (max-width: 1200px) {
+  .task-two {
+    width: 50%;
+    height: 350px;
+    background: yellow;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .task-two {
+    width: 33.33%;
+    height: 450px;
+    background: green;
   }
 }
