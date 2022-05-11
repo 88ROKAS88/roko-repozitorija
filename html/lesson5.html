@@ -4,73 +4,86 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>5 PAMOKA</title>
+    <title>2 (test)</title>
+
     <style>
-      .wallpaper {
-        width: 100%;
-        height: 400px;
-        background: gray;
+      .border {
+        border: 1px solid black;
+        margin: 15px;
+        padding: 10px;
+        width: 80%;
+        border-radius: 5px;
+        position: relative;
       }
-      .button {
-        width: 100%;
-        background: lightgray;
-        bottom: 0px;
+      .label {
         position: absolute;
+        top: -14px;
+        background: white;
+        padding: 2px;
       }
-      .center {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-      }
-      #start {
-        bottom: 0px;
+      .margin {
+        margin-top: 40px;
       }
     </style>
   </head>
   <body>
     <a href="../index.html">BACK</a>
-    <div class="wallpaper">
-      <h1 id="header" class="center">marke</h1>
-      <ul>
-        <li id="propertyOne">metai</li>
-        <li id="propertyTwo">variklis</li>
-      </ul>
-      <div class="button">
-        <h2 id="start" class="center">START PRESENTATION</h2>
-        <h2 id="next" class="center">NEXT SLIDE</h2>
-      </div>
+    <div>
+      <form>
+        <label for="fname">Vardas :</label>
+        <input type="text" id="fname" name="fname" /><br />
+        <label for="lname">Pavarde :</label>
+        <input type="text" id="lname" name="lname" /><br />
+        <label for="email">El pasto adresas :</label>
+        <input type="email" id="email" name="email" /><br />
+        <label for="phonenumber">Telefono numeris :</label>
+        <input type="number" id="phonenumber" name="phonenumber" /><br />
+        <label for="cars">Choose a car:</label>
+        <select id="rent" name="rent">
+          <option value="car">Auto nuoma</option>
+          <option value="bicycle">Dviracio nuoma</option>
+          <option value="suicide">Paspirtuko nuoma</option></select
+        ><br />
+        <label for="datefrom">Nuo kada nuomosites :</label>
+        <input type="date" id="datefrom" name="datefrom" /><br />
+        <label for="dateto">Iki kada nuomosites :</label>
+        <input type="date" id="dateto" name="dateto" /><br />
+        <label for="city">Issirinkite miesta:</label>
+        <select id="city" name="city">
+          <option value="vilnius">Vilnius</option>
+          <option value="kaunas">Kaunas</option>
+          <option value="klaipeda">Klaipeda</option></select
+        ><br />
+        <input type="submit" value="Submit" />
+      </form>
     </div>
-    <script>
-      let index = 0;
-      const cars = [
-        { brand: "audi", year: 2000, engine: ["2L", "2.5L", "3L"] },
-        { brand: "bmw", year: 1980, engine: ["2.5L", "3L", "4L"] },
-        { brand: "opel", year: 2010, engine: ["2L", "2.5L"] },
-      ];
-      const header = document.getElementById("header");
-      const propertyOne = document.getElementById("propertyOne");
-      const propertyTwo = document.getElementById("propertyTwo");
-      const next = document.getElementById("next");
-      const start = document.getElementById("start");
-      //## START EVENT LISTENER ##
-      start.addEventListener("click", function startb() {
-        for (let i = 0; i < cars.length; i++) {
-          setTimeout(() => {
-            header.innerHTML = cars[i]["brand"];
-            propertyOne.innerHTML = cars[i]["year"];
-            propertyTwo.innerHTML = cars[i]["engine"];
-          }, 1000 * i);
-        }
-        index++;
-      });
-      //## NEXT EVENT LISTENER ##
-      next.addEventListener("click", function nextb() {
-        header.innerHTML = cars[index]["brand"];
-        propertyOne.innerHTML = cars[index]["year"];
-        propertyTwo.innerHTML = cars[index]["engine"][0];
-        index++;
-      });
-    </script>
+    <div class="margin">
+      <form>
+        <div class="border">
+          <div class="label">Pasirinkite migtuka</div>
+          <input disabled type="radio" name="fav_language" value="HTML" />
+
+          <input disabled type="radio" name="fav_language" value="CSS" />
+
+          <input disabled type="radio" name="fav_language" value="JavaScript" />
+          <input
+            disabled
+            type="text"
+            id="fname"
+            name="fname"
+            placeholder="jusu vardas..."
+          />
+        </div>
+        <div class="border">
+          <div class="label">Pasirinkite kita migtuka</div>
+          <input type="radio" name="language" value="english" />
+          <input type="radio" name="language" value="spanish" />
+          <input type="radio" name="language" value="norvegian" />
+          <input disabled type="radio" name="language" value="russian" />
+          <input disabled type="radio" name="language" value="portugal" />
+        </div>
+        <input type="submit" value="siusti i serveri" />
+      </form>
+    </div>
   </body>
 </html>
