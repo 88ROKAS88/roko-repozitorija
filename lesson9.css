@@ -36,7 +36,45 @@
 .gray article:first-child {
   display: block;
 }
+
+/* SECOND TASK OF LESSON 9 START */
+.nav2 ul li a {
+  border: 1px solid blue;
+  border-radius: 3px;
+  font-weight: 100;
+  color: blue;
+  padding: 4px;
+  margin: 3px;
+  flex-grow: 1;
+  display: block;
+  width: 200px;
+  text-decoration: none;
+}
+.nav2 ul li a:hover {
+  border: 1px solid blue;
+  border-radius: 3px;
+  font-weight: 900;
+  color: blue;
+  padding: 4px;
+  margin: 3px;
+}
+.nav2 ul li {
+  display: block;
+  display: flex;
+}
+.nav2 ul {
+  padding: 0px;
+  list-style-type: none;
+}
+
+/* SECOND TASK OF LESSON 9 START */
+
 @media only screen and (min-width: 786px) and (max-width: 1024px) {
+  /* SECOND TASK OF LESSON 9 START */
+  .nav2 ul li a {
+    flex-grow: 0;
+  }
+  /* SECOND TASK OF LESSON 9 END */
   .yellow {
     height: 25vh;
   }
