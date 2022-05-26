@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>13 Pamoka</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
+  </head>
+  <body>
+    <a href="../index.html">BACK</a>
+
+    <!-- numerio parodymas-->
+    <h1 id="sum"></h1>
+    <script>
+      const sum = document.getElementById("sum");
+      let key = [];
+      //funkcija sukurianti random skaiciu
+      function getRandomInt() {
+        return Math.floor(Math.random() * 10).toFixed(2);
+      }
+      //for loopas 5 kart paleidzia random funkcija
+      for (let i = 0; i < 5; i++) {
+        key[i] = getRandomInt();
+      }
+      //bubble sort algoritmas isrusiuoja visus skaicius masyve nuo didziausio iki maziausio
+      for (let a = 0; a < key.length; a++) {
+        for (let b = a + 1; b < key.length; b++) {
+          if (key[a] < key[b]) {
+            let temp = key[a];
+            key[a] = key[b];
+            key[b] = temp;
+          }
+        }
+      }
+      //inner html parodo maziausia ir didziausia skaicius
+      sum.innerHTML =
+        "Didziausias numeris: " +
+        key[0] +
+        " , Maziausias numeris: " +
+        key[key.length - 1] +
+        ", Visi numeriai: " +
+        key;
+
+      console.log(
+        'I am a "double quoted" string inside "double quotes „\n' +
+          "FirstLine\n" +
+          'ThirdLine."'
+      );
+    </script>
+  </body>
+</html>
