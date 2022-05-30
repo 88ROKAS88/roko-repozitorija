@@ -1,0 +1,96 @@
+/* 
+-- Menu font-family: Lato, sans-serif;
+-- Menu font color: #151515
+-- Menu button background-color: #b6b6b6
+*/
+
+/* YOUR CODE HERE ir beje sėkmės*/
+.container {
+  margin: auto;
+  padding: 10px;
+}
+.photo-organizer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.img-container {
+  width: calc(50% - 10px);
+  margin-bottom: 10px;
+}
+.image {
+  aspect-ratio: 0.7;
+  width: 100%;
+  object-fit: cover;
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.logo {
+  height: 50px;
+}
+.br {
+  border: 1px solid red;
+}
+.navigation {
+  width: 100%;
+  justify-content: center;
+  display: flex;
+}
+.navigation div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.navigation div a {
+  display: block;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: black;
+  margin: 0 5px;
+}
+.navigation div a :visited {
+  color: black;
+}
+.spread {
+  width: 50px;
+  height: 50px;
+  background: black;
+}
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
+  .img-container {
+    width: calc(33.333% - 10px);
+  }
+  .spread {
+    display: none;
+  }
+  .navigation {
+    width: auto;
+    display: flex;
+  }
+  .navigation div {
+    flex-direction: row;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+  }
+  .img-container {
+    width: calc(20% - 10px);
+  }
+  .spread {
+    display: none;
+  }
+  .navigation {
+    width: auto;
+    display: flex;
+  }
+  .navigation div {
+    flex-direction: row;
+  }
+}

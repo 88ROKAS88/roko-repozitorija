@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Užduotis Nr. 2 (Photographer portfolio website)</title>
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="./style.css" />
+    <!-- FONT AWESOME (5.15.1 version) CDN (Icons: https://fontawesome.com/icons?d=gallery)-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <!-- YOUR CODE HERE ir beje sėkmės ;) -->
+    <header class="container header">
+      <a href="#"><img class="logo" src="assets/logo.jpg" alt="logo" /></a>
+      <div id="spreader" class="spread"></div>
+      <nav class="navigation">
+        <div id="spread-item">
+          <a href="#">home</a>
+          <a href="#">contacts</a>
+          <a href="#">author</a>
+        </div>
+      </nav>
+    </header>
+    <main class="container photo-organizer">
+      <div class="img-container">
+        <img class="image" src="assets/img1.jpg" alt="photo example" />
+      </div>
+      <div class="img-container">
+        <img class="image" src="assets/img2.jpg" alt="photo example" />
+      </div>
+      <div class="img-container">
+        <img class="image" src="assets/img3.jpg" alt="photo example" />
+      </div>
+      <div class="img-container">
+        <img class="image" src="assets/img4.jpg" alt="photo example" />
+      </div>
+      <div class="img-container">
+        <img class="image" src="assets/img5.jpg" alt="photo example" />
+      </div>
+      <div class="img-container">
+        <img class="image" src="assets/img6.jpg" alt="photo example" />
+      </div>
+      <div class="img-container">
+        <img class="image" src="assets/img7.jpg" alt="photo example" />
+      </div>
+      <div class="img-container">
+        <img class="image" src="assets/img8.jpg" alt="photo example" />
+      </div>
+      <div class="img-container">
+        <img class="image" src="assets/img9.jpg" alt="photo example" />
+      </div>
+      <div class="img-container">
+        <img class="image" src="assets/img10.jpg" alt="photo example" />
+      </div>
+    </main>
+    <script>
+      let counter = 1;
+      const spreader = document.getElementById("spreader");
+      const spreadItem = document.getElementById("spread-item");
+      spreader.addEventListener("click", function () {
+        if (counter == 0) {
+          spreadItem.style.display = "flex";
+          spreader.style.background = "gray";
+          counter = 1;
+          console.log("spread");
+        } else {
+          spreadItem.style.display = "none";
+          spreader.style.background = "black";
+          counter = 0;
+        }
+      });
+    </script>
+  </body>
+</html>

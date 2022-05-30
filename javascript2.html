@@ -31,6 +31,26 @@
         multiplication +
         " , division: " +
         division;
+
+      const members = [0, 1, 2, 3, 4, 5];
+      function bandMembers(x) {
+        if (x <= 0) {
+          return "ne grupe";
+        } else if (x == 1) {
+          return "solo";
+        } else if (x == 2) {
+          return "duetas";
+        } else if (x == 3) {
+          return "trio";
+        } else if (x == 4) {
+          return "kvartetas";
+        } else if (x > 4) {
+          return "didele grupe";
+        }
+      }
+      for (let i = 0; i < members.length; i++) {
+        console.log(bandMembers(members[i]));
+      }
     </script>
   </body>
 </html>
