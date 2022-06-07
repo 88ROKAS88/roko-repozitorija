@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>javascript 3</title>
+  </head>
+  <body>
+    <script>
+      /*
+             function checkAge(age) {
+               return age > 18 ? true : "Did parents allow you?";
+             }
+
+             function min(num1, num2) {
+               return num1 < num2 ? num1 : num2;
+             }
+
+             function plusPlus(num1, num2) {
+               for (i = 0; i < num2; i++) {
+                 num1 += 1;
+               }
+             }
+             plusPlus(5, 3);
+
+
+       min(2, 5) == 2
+
+       min(3, -1) == -1
+
+       min(1, 1) == 1
+       */
+      /*
+             //Simple function
+             function abc(i, arr, result) {
+               if (i >= arr.length) {
+                 return result;
+               }
+               result += Number(arr[i]);
+               i++;
+               return abc(i, arr, result);
+             }
+             function sumOfDigits(num) {
+               let i = 0;
+               let arr = num.toString();
+               let result = 0;
+               return abc(i, arr, result);
+             }
+             //Arrow function
+             let arrowInner = (i, arr, result) => {
+               if (i >= arr.length) {
+                 return result;
+               }
+               result += Number(arr[i]);
+               i++;
+               return arrowInner(i, arr, result);
+             };
+
+             let arrow = (num) => {
+               let i = 0;
+               let arr = num.toString();
+               let result = 0;
+               return arrowInner(i, arr, result);
+             };
+             //CAll
+             console.log("simple", sumOfDigits(123));
+             console.log("arrow", arrow(123));
+
+             let cities = [
+               "Vilnius",
+               "Kaunas",
+               "Klaipėda",
+               "Šiauliai",
+               "Panevėžys",
+               "Marijampolė",
+             ];
+             let getFavoriteCity = (name, surname, city) => {
+               return `${name} ${surname} favorite city is ${city}`;
+             };
+             console.log(getFavoriteCity("Name", "Surname", cities[0]));
+             */
+      function checkNumber(num) {
+        if (num < 1) {
+          return "numeris yra permazas";
+        }
+        if (isNaN(num)) {
+          return "irasei ne numeri";
+        }
+        if (num % 3 == 0 && num % 5 == 0) {
+          return "skaicius dalinasi is 3 ir is 5 ";
+        } else if (num % 5 == 0) {
+          return "skaicius dalinasi is 5 ";
+        } else if (num % 3 == 0) {
+          return "skaicius dalinasi is 3 ";
+        } else {
+          return "skaicius nesidalina nei is 3 nei is 5 ";
+        }
+      }
+      //console.log(checkNumber("15"));
+
+      function forLaugh(num) {
+        let laughtvar = " ";
+        for (let i = 0; i < num; i++) {
+          laughtvar += "ha";
+        }
+        return laughtvar;
+      }
+      function whileLaugh(num) {
+        let laughtvar = " ";
+        let i = 0;
+        while (i < num) {
+          laughtvar += "ha";
+          i++;
+        }
+        return laughtvar;
+      }
+      function doWhileLaugh(num) {
+        let laughtvar = " ";
+        let i = 0;
+        do {
+          laughtvar += "ha";
+          i++;
+        } while (i < num);
+        return laughtvar;
+      }
+      function getLaugh(num) {
+        return forLaugh(num) + whileLaugh(num) + doWhileLaugh(num);
+      }
+      //console.log(getLaugh(4));
+
+      let getHighestNumber = (...args) => Math.max(...args);
+
+      console.log(getHighestNumber(34, 7, 8, 55, 6, 7, 9, 52, 56));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>javascript 4</title>
+  </head>
+  <body>
+    <script>
+      function forCycleFunction() {
+        for (let x = 9; x >= 1; x--) {
+          console.log("hello " + x);
+        }
+      }
+      function playWithArray() {
+        let arr = ["jazz", "blues"];
+        console.log(arr);
+        arr.push("rock and roll");
+        console.log(arr);
+        arr[1] = "classic";
+        console.log(arr);
+        console.log(arr.shift());
+        console.log(arr);
+        arr.unshift("rap", "raggie");
+        console.log(arr);
+      }
+      //playWithArray();
+
+      //pirmadienis
+      let arr = [11, -2, 34, 45, 19, 6];
+      function getMaxSubSum(arr) {
+        let result = 0;
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i] > 0) {
+            result += arr[i];
+          }
+        }
+        return result;
+      }
+      console.log(getMaxSubSum(arr));
+      console.assert(getMaxSubSum(arr) == 115, "zinute");
+    </script>
+  </body>
+</html>
