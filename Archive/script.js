@@ -39,11 +39,12 @@ function arrIndexOfLast(nums, value) {
 // Iškvietus funkciją rezultata bus: 34223
 function reverseNumbers(num) {
   let result = num.toString();
-  for (let i = 0; i < num.length / 2; i++) {
-    console.log(result[i]);
+  for (let i = 0; i < result.length / 2; i++) {
     let a = result[i];
-    result[i] = result[num.length - (1 + i)];
-    result[num.length - (1 + i)] = a;
+
+    result[i] = result[result.length - (1 + i)];
+
+    result[result.length - (1 + i)] = a;
   }
   return result;
 }
