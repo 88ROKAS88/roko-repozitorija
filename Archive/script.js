@@ -18,8 +18,8 @@ function arrMultiplied(nums, multiply) {
 }
 // 3. Parašykite funkciją arrCountTwos, kuri suskaičiuoja dvejetus masyve
 function arrCountTwos(nums) {
+  count = 0;
   for (let i = 0; i < nums.length; i++) {
-    count = 0;
     if (nums[i] == 2) {
       count++;
     }
@@ -40,6 +40,7 @@ function arrIndexOfLast(nums, value) {
 function reverseNumbers(num) {
   let result = num.toString();
   for (let i = 0; i < num.length / 2; i++) {
+    console.log(result[i]);
     let a = result[i];
     result[i] = result[num.length - (1 + i)];
     result[num.length - (1 + i)] = a;
@@ -51,8 +52,8 @@ function reverseNumbers(num) {
 // Iškvietus funkciją rezultata bus: "Mažiausas: 1, Didžiausas: 9"
 function lowHigh(nums) {
   let result = { maziausias: 0, didziausias: 0 };
-  result[maziausias] = Math.min(...nums);
-  result[didziausias] = Math.max(...nums);
+  result.maziausias = Math.min(...nums);
+  result.didziausias = Math.max(...nums);
   return result;
 }
 // 8. Parašykite  funkciją checkForLetters, kuri priims du argumentus: Pirmas argumentas bus sakinys (arba žodžiai (-is)) ir antras argumentas bus raidė (kaip string). Funkcija turės suskaičiuoti kiek pirmu agrumentu nurodytame sakinyje/žodžiuose(-yje) yra antru argumentu nurodytų raidžių ir gražinti tų raidžių sumą su sakiniu pvz.: “Raidė “v” sakinyje rasta 4 kartus”.
@@ -169,7 +170,14 @@ function calculateValue(num1, num2, action) {
 // Pastaba: šios funkcijos: addition(), subtraction(), multiplication(), division() turi būti kviečiamas calculateValue() viduje, o aprašomos išorėje.
 
 // TESTING !
-console.log(" 8 “Raidė “v” sakinyje rasta 4 kartus”.");
+console.log("numeriu masyvas", numbers);
+console.log("1 pirma uzduotis ", arrDoubled(numbers), numbers);
+console.log("2 antra uzduotis ", arrMultiplied(numbers, 3));
+console.log("3 trecia uzduotis ", arrCountTwos(numbers));
+console.log("4 ketvirta uzduotis ", arrIndexOfFirst(numbers, 2));
+console.log("6 sesta uzduotis ", reverseNumbers(12345), reverseNumbers(123456));
+console.log("7 septinta uzduotis ", lowHigh(numbers));
+console.log(" 8 astunta uzduotis ");
 console.log(checkForLetters("cia yra testinis sakinys", "a"));
 console.log(" 9 [1,3,4,6,7,8,10];");
 console.log(
