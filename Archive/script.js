@@ -38,15 +38,14 @@ function arrIndexOfLast(nums, value) {
 // Pvz.: Turime skaičius 32243;
 // Iškvietus funkciją rezultata bus: 34223
 function reverseNumbers(num) {
-  let result = num.toString();
+  let result = num.toString().split("");
   for (let i = 0; i < result.length / 2; i++) {
     let a = result[i];
-
-    result[i] = result[result.length - (1 + i)];
-
-    result[result.length - (1 + i)] = a;
+    let b = result.length - (1 + i);
+    result[i] = result[b];
+    result[b] = a;
   }
-  return result;
+  return result.toString();
 }
 // 7. Parašykite  funkciją, kuri kaip argumentą priims skaičių masyvą ir suras atitinkamai mažiausią ir didžiausią skaičių bei juos grąžins.
 // Pvz.: Turime masyvą: [8,5,4,2,7,1,9]
