@@ -16,19 +16,19 @@
     <div class="folder">
       <table id="age-table">
         <tr>
-          <th>Company</th>
-          <th>Contact</th>
-          <th>Country</th>
+          <th>name</th>
+          <th>name</th>
+          <th>name</th>
         </tr>
         <tr>
-          <td id="age">Alfreds Futterkiste</td>
-          <td>Maria Anders</td>
-          <td>Germany</td>
+          <td id="age"></td>
+          <td>age</td>
+          <td>age</td>
         </tr>
         <tr>
-          <td>Centro comercial Moctezuma</td>
-          <td>Francisco Chang</td>
-          <td>Mexico</td>
+          <td>empty</td>
+          <td>empty</td>
+          <td>empty</td>
         </tr>
       </table>
     </div>
@@ -48,11 +48,11 @@
       // let tablet = document.getElementById("age").value;
       // addEventListener.
       //https://stackoverflow.com/questions/21338476/addeventlistener-on-form-submit
-      // document.getElementById("form1").addEventListener("submit", function () {
-      //    let ageVar = document.getElementById("agei").value;
-      //   let firstName = (document.getElementById("fname").style.display =
-      //      "none");
-      //  });
+      document.getElementById("form1").addEventListener("submit", function () {
+        let ageVar = document.getElementById("agei").value;
+        let firstName = document.getElementById("fname").value;
+        document.getElementById("age").textContent = ageVar;
+      });
 
       console.log(document.getElementById("age-table"));
       console.log(document.getElementById("age"));
