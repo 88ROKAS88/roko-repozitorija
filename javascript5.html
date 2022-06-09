@@ -16,7 +16,7 @@
     <div class="folder">
       <table id="age-table">
         <tr>
-          <th>name</th>
+          <th id="name">name</th>
           <th>name</th>
           <th>name</th>
         </tr>
@@ -52,6 +52,7 @@
         let ageVar = document.getElementById("agei").value;
         let firstName = document.getElementById("fname").value;
         document.getElementById("age").textContent = ageVar;
+        document.getElementById("name").textContent = firstName;
       });
 
       console.log(document.getElementById("age-table"));
