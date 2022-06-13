@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JAVASCRIPT CALCULATOR</title>
+    <style>
+      #info {
+        color: gray;
+        font-size: 2em;
+      }
+      #screen {
+        font-size: 2em;
+        font-weight: bold;
+        width: 200px;
+        margin: 5px;
+      }
+      .action {
+        font-size: 1.5em;
+        margin: 3px;
+        font-weight: bold;
+        padding: 3px;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="calculator">
+      <p id="info">Enter first number and chose action</p>
+      <input type="number" id="screen" name="agei" /><br />
+      <span class="action" id="division">/</span
+      ><span class="action" id="multiplication">*</span
+      ><span class="action" id="subtraction">-</span
+      ><span class="action" id="addition">+</span>
+      <span class="action" id="equals">=</span>
+    </div>
+    <script>
+      const info = document.getElementById("info");
+      const screen = document.getElementById("screen");
+      const divisionV = document.getElementById("division");
+      const multiplicationV = document.getElementById("multiplication");
+      const subtractionV = document.getElementById("subtraction");
+      const additionV = document.getElementById("addition");
+      const equalsV = document.getElementById("equals");
+      const actionsV = document.querySelectorAll("#calculator > span");
+      function division(num1, num2) {
+        return num1 / num2;
+      }
+      function multiplication(num1, num2) {
+        return num1 * num2;
+      }
+      function subtraction(num1, num2) {
+        return num1 - num2;
+      }
+      function addition(num1, num2) {
+        return Number(num1) + Number(num2);
+      }
+      function calculateValue(num1, num2, action) {
+        if (isNaN(num1) || isNaN(num2)) {
+          return " error number is not number ";
+        }
+        switch (action) {
+          case "division":
+            return division(num1, num2);
+          case "multiplication":
+            return multiplication(num1, num2);
+          case "subtraction":
+            return subtraction(num1, num2);
+          case "addition":
+            return addition(num1, num2);
+          default:
+            return "error action is invalid ";
+        }
+      }
+
+      let num1 = null;
+      let num2 = null;
+      let action = null;
+      for (let i = 0; i < 4; i++) {
+        actionsV[i].addEventListener("click", actionsEvent);
+      }
+
+      function actionsEvent() {
+        console.log(event.target.id);
+        action = event.target.id;
+        num1 = screen.value;
+        console.log(action);
+        console.log(num1);
+        screen.value = 0;
+        info.innerText = "Enter second number and press = ";
+
+        equalsV.addEventListener("click", function () {
+          num2 = screen.value;
+          screen.value = calculateValue(num1, num2, action);
+          info.innerText = "Ur ansver is. Press AC to restart";
+        });
+      }
+
+      info.innerText = "Enter first number and chose action";
+      screen.value = 0;
+    </script>
+  </body>
+</html>

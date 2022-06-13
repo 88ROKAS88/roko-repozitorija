@@ -7,16 +7,27 @@
     <title>javascript 6</title>
   </head>
   <body>
-    <input type="text" id="enter-text" name="enter-text" />
-    <input type="submit" id="button" value="Submit" />
-    <input type="text" id="display" name="display" />
+    <!--
+      <input type="text" id="enter-text" name="enter-text" />
+      <input type="submit" id="button" value="Submit" />
+      <input type="text" id="display" name="display" />
+      <script>
+        const button = document.querySelector("#button");
+        const enterText = document.getElementById("enter-text");
+        const display = document.querySelector("#display");
+        button.addEventListener("click", function (event) {
+          display.value = enterText.value;
+        });
+      </script>
+    -->
+
+    <h1 id="display"></h1>
     <script>
-      const button = document.querySelector("#button");
-      const enterText = document.getElementById("enter-text");
-      const display = document.querySelector("#display");
-      button.addEventListener("click", function (event) {
-        display.value = enterText.value;
+      const display = document.getElementById("display");
+      window.addEventListener("resize", (e) => {
+        display.innerText = `Lango plotis: ${window.innerWidth} Lango aukstis: ${window.innerHeight} `;
       });
+      display.innerText = `Lango plotis: ${window.innerWidth} Lango aukstis: ${window.innerHeight} `;
     </script>
   </body>
 </html>
