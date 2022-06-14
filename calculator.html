@@ -6,22 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JAVASCRIPT CALCULATOR</title>
     <style>
+      #calculator {
+        width: 400px;
+        height: 300px;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 10px;
+      }
       #info {
         color: gray;
         font-size: 2em;
       }
       #screen {
-        font-size: 2em;
+        font-size: 50px;
         font-weight: bold;
         width: 200px;
         margin: 5px;
+        height: 100px;
+        width: 100%;
       }
       .action {
+        width: 50px;
+        height: 50px;
         font-size: 1.5em;
         margin: 3px;
         font-weight: bold;
         padding: 3px;
         border: 1px solid black;
+        display: flex;
+        box-sizing: border-box;
+        justify-content: center;
+        align-items: center;
       }
       #numpad {
         width: 300px;
@@ -45,6 +60,15 @@
       }
       .number:active {
         background-color: gray;
+      }
+      .action:hover {
+        background-color: lightgray;
+      }
+      .action:active {
+        background-color: gray;
+      }
+      #var-disp {
+        color: red;
       }
     </style>
   </head>
@@ -71,6 +95,7 @@
       <div id="nine" class="number">9</div>
       <div id="zero" class="number">0</div>
     </div>
+    <p id="var-disp"></p>
     <script>
       const info = document.getElementById("info");
       const screen = document.getElementById("screen");
@@ -82,6 +107,7 @@
       const actionsV = document.querySelectorAll("#calculator > span");
       const reset = document.querySelector("#reset");
       const numpad = document.querySelectorAll(".number");
+      const varDisp = document.getElementById("var-disp");
       //matematical functions from last task
       function division(num1, num2) {
         return num1 / num2;
@@ -119,20 +145,23 @@
       for (let i = 0; i < 4; i++) {
         actionsV[i].addEventListener("click", actionsEvent);
       }
+      function varDispFunction() {
+        varDisp.innerText = ` Number1: ${num1}, Action: ${action}, Number2: ${num2} `;
+      }
 
       function actionsEvent() {
         console.log(event.target.id);
         action = event.target.id;
         num1 = screen.value;
-        console.log(action);
-        console.log(num1);
         screen.value = 0;
         info.innerText = "Enter second number and press = ";
+        varDispFunction();
 
         equalsV.addEventListener("click", function () {
           num2 = screen.value;
           screen.value = calculateValue(num1, num2, action);
           info.innerText = "Ur ansver is. Press AC to restart";
+          varDispFunction();
         });
       }
       reset.addEventListener("click", (e) => {
@@ -178,6 +207,7 @@
 
       info.innerText = "Enter first number and chose action";
       screen.value = 0;
+      varDispFunction();
     </script>
   </body>
 </html>
