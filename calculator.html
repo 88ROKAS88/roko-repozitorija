@@ -23,6 +23,29 @@
         padding: 3px;
         border: 1px solid black;
       }
+      #numpad {
+        width: 300px;
+        height: 400px;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 10px;
+      }
+      .number {
+        width: 100px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 50px;
+        border: 1px solid black;
+        box-sizing: border-box;
+      }
+      .number:hover {
+        background-color: lightgray;
+      }
+      .number:active {
+        background-color: gray;
+      }
     </style>
   </head>
   <body>
@@ -34,6 +57,19 @@
       ><span class="action" id="subtraction">-</span
       ><span class="action" id="addition">+</span>
       <span class="action" id="equals">=</span>
+      <span class="action" id="reset">AC</span>
+    </div>
+    <div id="numpad">
+      <div id="one" class="number">1</div>
+      <div id="two" class="number">2</div>
+      <div id="three" class="number">3</div>
+      <div id="four" class="number">4</div>
+      <div id="five" class="number">5</div>
+      <div id="six" class="number">6</div>
+      <div id="seven" class="number">7</div>
+      <div id="eight" class="number">8</div>
+      <div id="nine" class="number">9</div>
+      <div id="zero" class="number">0</div>
     </div>
     <script>
       const info = document.getElementById("info");
@@ -44,6 +80,9 @@
       const additionV = document.getElementById("addition");
       const equalsV = document.getElementById("equals");
       const actionsV = document.querySelectorAll("#calculator > span");
+      const reset = document.querySelector("#reset");
+      const numpad = document.querySelectorAll(".number");
+      //matematical functions from last task
       function division(num1, num2) {
         return num1 / num2;
       }
@@ -73,7 +112,7 @@
             return "error action is invalid ";
         }
       }
-
+      //calculator main frame
       let num1 = null;
       let num2 = null;
       let action = null;
@@ -96,6 +135,46 @@
           info.innerText = "Ur ansver is. Press AC to restart";
         });
       }
+      reset.addEventListener("click", (e) => {
+        console.log("reset");
+        document.location.reload();
+      });
+      //numpad
+      function idToNumber(id) {
+        switch (id) {
+          case "one":
+            return 1;
+          case "two":
+            return 2;
+          case "three":
+            return 3;
+          case "four":
+            return 4;
+          case "five":
+            return 5;
+          case "six":
+            return 6;
+          case "seven":
+            return 7;
+          case "eight":
+            return 8;
+          case "nine":
+            return 9;
+          case "zero":
+            return 0;
+        }
+      }
+      function numpadButtonFunction() {
+        if (screen.value == 0) {
+          screen.value = idToNumber(event.target.id);
+        } else {
+          screen.value += idToNumber(event.target.id);
+        }
+      }
+
+      numpad.forEach((element) => {
+        element.addEventListener("click", numpadButtonFunction);
+      });
 
       info.innerText = "Enter first number and chose action";
       screen.value = 0;
