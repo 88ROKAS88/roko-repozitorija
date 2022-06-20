@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>javascript 7</title>
+  </head>
+  <body>
+    <div id="main"></div>
+    <script>
+      const main = document.querySelector("#main");
+      //
+      function createElement(whereAppend, textVariable, createElementType) {
+        let text = document.createTextNode(textVariable);
+        const element = document.createElement(createElementType);
+        element.appendChild(text);
+        whereAppend.appendChild(element);
+      }
+
+      createElement(main, "My title is here", "h2");
+      createElement(main, "My paragraph text is here", "p");
+      createElement(main, "", "ul");
+      createElement(
+        document.querySelector("ul"),
+        "Text, just to see that ul and li is here",
+        "li"
+      );
+      createElement(main, "My second paragraph is here", "p");
+    </script>
+  </body>
+</html>
