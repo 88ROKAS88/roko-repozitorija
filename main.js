@@ -46,7 +46,7 @@ zeroToNineteen = [
   "septynios",
   "astuonios",
   "devynios",
-  "desimt",
+  "desim",
   "vienuolika",
   "dvylika",
   "trylika",
@@ -60,10 +60,10 @@ zeroToNineteen = [
 twentyToSixty = [
   "",
   "",
-  "dvidesimt",
-  "trisdesimt",
-  "keturiasdesimt",
-  "penkiasdesimt",
+  "dvidesim",
+  "trisdesim",
+  "keturiasdesim",
+  "penkiasdesim",
 ];
 function numbersToWords(num) {
   if (num < 20) {
