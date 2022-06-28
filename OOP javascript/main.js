@@ -37,7 +37,6 @@ priceImput.addEventListener("keyup", (e) => {
 priceFrom.addEventListener("click", () => {
   list.innerHTML = "";
   filterArr(9999, usersPrice, false, true, false);
-  console.log(usersPrice);
 });
 priceTo.addEventListener("click", () => {
   list.innerHTML = "";

@@ -15,9 +15,9 @@ class Products {
   }
   checkForDiscount() {
     if (this.price > this.salePrice) {
-      return ["This item is on SALE, buy now, just - ", this.salePrice];
+      return `This item is on SALE, buy now, just - <b>  ${this.salePrice} </b> `;
     }
-    return ["There is no sales for this product", this.price];
+    return `There is no sales for this product <b> ${this.price} </b>`;
   }
   showDiscountSize() {
     if (this.salePrice < this.price) {
