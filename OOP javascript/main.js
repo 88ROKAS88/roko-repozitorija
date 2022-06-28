@@ -11,7 +11,7 @@ function displayProducts(product) {
   const newProduct = document.createElement("li");
   list.appendChild(newProduct);
   newProduct.className = "list-group-item";
-  newProduct.innerHTML = ` ${product.showProtuctAndPrice()} ${product.checkForDiscount()}`;
+  newProduct.innerHTML = ` ${product.showProtuctAndPrice()} ${product.checkForDiscount()}  ${product.showDiscountSize()}`;
 }
 
 function filterArr(max, min, priceto, pricefrom, all) {

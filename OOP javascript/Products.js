@@ -19,4 +19,11 @@ class Products {
     }
     return ["There is no sales for this product", this.price];
   }
+  showDiscountSize() {
+    if (this.salePrice < this.price) {
+      let calc = (100 / this.price) * (this.price - this.salePrice);
+      return ` DISCOUNT SIZE <b> ${Math.floor(calc)} % </b>`;
+    }
+    return "NO DISCOUNT";
+  }
 }
