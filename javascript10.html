@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>javascript 10</title>
+  </head>
+  <body>
+    <script>
+      class Movie {
+        constructor(name, year, director, budget, income) {
+          this.name = name;
+          this.year = year;
+          this.director = director;
+          this.budget = budget;
+          this.income = income;
+        }
+        getIntroduction() {
+          const introduction = {
+            name: this.name,
+            year: this.year,
+            director: this.director,
+          };
+          return introduction;
+        }
+        getIntroductionString() {
+          const movie = this.getIntroduction();
+          return `Movie name: ${movie.name}, release year- ${movie.year} directed by: ${movie.director}`;
+          //return `Movie name: ${this.name}, release year- ${this.year} directed by: ${this.director}`;
+        }
+        getProfit() {
+          const profit = this.income - this.budget;
+          return profit;
+        }
+      }
+      let myMovie1 = new Movie("Lord", 2014, "tarantulino", 3000, 50000);
+      let myMovie2 = new Movie("Nemo", 2008, "dude", 2000, 40000);
+      // console.log(myMovie1.getIntroduction());
+      // console.log(myMovie1.getIntroductionString());
+      // console.log(myMovie1.getProfit());
+      // console.log(myMovie2.getIntroduction());
+      // console.log(myMovie2.getIntroductionString());
+      // console.log(myMovie2.getProfit());
+
+      class Animal {
+        constructor(name) {
+          this.name = name;
+        }
+      }
+      class Rabbit extends Animal {
+        constructor(name) {
+          super(name);
+          this.created = Date.now();
+        }
+      }
+      let rabbit = new Rabbit("White Rabbit"); // Error: this is not defined
+      console.log(rabbit);
+
+      //Namu darbas pirmadieniui
+      class Car {
+        constructor(make, model, year) {
+          this.make = make;
+          this.model = model;
+          this.year = year;
+        }
+        getIntroduction() {
+          const makeModelIntroduction = {
+            make: this.make,
+            model: this.model,
+            introduction: `Make: ${this.make} and model: ${this.model} `,
+          };
+          return makeModelIntroduction;
+        }
+        getAge() {
+          const howOld = new Date().getFullYear() - this.year;
+          const sentence =
+            howOld <= 10 ? "10 metu arba naujesne" : "11 metu arba senesne";
+          const carAge = {
+            age: howOld,
+            sentence: sentence,
+          };
+          return carAge;
+        }
+      }
+      class Motorcycle extends Car {
+        constructor(make, model, year, wheels) {
+          super(make, model, year);
+          this.wheels = wheels;
+        }
+        getWheelsNumber() {
+          let sentence = "";
+          if (this.wheels == 2) {
+            sentence = "Sitas motociklas turi 2 ratus";
+          } else if (this.wheels == 3) {
+            sentence = "Sitas motociklas turi 3 ratus";
+          } else {
+            sentence = `Sitas motociklas turi ${this.wheels} rata/us`;
+          }
+          return sentence;
+        }
+      }
+      let silke = new Car("Audi", "100", 1982);
+      console.log(silke.getIntroduction());
+      console.log(silke.getAge());
+      console.log(
+        "----------------------------------------------------------------------------------"
+      );
+      let hayabusa = new Motorcycle("Suzuki", "GSX1300R Hayabusa", 1999, 2);
+      console.log(hayabusa.getIntroduction());
+      console.log(hayabusa.getAge());
+      console.log(hayabusa.getWheelsNumber());
+    </script>
+  </body>
+</html>

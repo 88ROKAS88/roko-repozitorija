@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript 9</title>
+  </head>
+  <body>
+    <script>
+      class Book {
+        constructor(name, author, year) {
+          this.name = name;
+          this.author = author;
+          this.year = year;
+        }
+        nameAndYear() {
+          return this.name, this.year;
+        }
+        howOldIsTheBookFirstClassEdition() {
+          const today = new Date();
+          return today.getFullYear() - this.year;
+        }
+      }
+
+      let myBook = new Book("Lord", "Someone from britain", 2014);
+      console.log(myBook.howOldIsTheBookFirstClassEdition());
+    </script>
+  </body>
+</html>
