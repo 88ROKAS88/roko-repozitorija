@@ -9,11 +9,187 @@
     <link rel="stylesheet" type="text/css" href="styles.css" />
   </head>
   <body>
-    <main class="container-sm d-flex justify-content-center"></main>
-    <ul class="list-group col-11">
-      <li class="list-group-item">An item</li>
-      <li class="list-group-item">A second item</li>
-    </ul>
+    <main class="container-sm p-4 br d-flex justify-content-center">
+      <div class="flex-column col-11">
+        <ul class="list-group m-1">
+          <li class="list-group-item list-group-item-secondary">
+            Paspaude mygtuka iskvieskite
+            <span class="text-danger"> alert('Hello World!')</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-center">
+            <button
+              type="button"
+              class="btn btn-primary"
+              id="show-alert-button"
+            >
+              Click on me
+            </button>
+          </li>
+        </ul>
+        <ul class="list-group m-1">
+          <li class="list-group-item list-group-item-secondary">
+            Ivestai reiksmei priklausomai nuo mygtuko keiciame reigstra
+            (Dideles/Mazos raides)
+          </li>
+          <li class="list-group-item">
+            <div class="input-group">
+              <input
+                type="text"
+                class="form-control"
+                id="upper-case-input"
+                placeholder="Fill me in"
+                aria-label="Recipient's username with two button addons"
+              />
+              <button
+                class="btn btn-outline-secondary"
+                id="all-to-upper-case-button"
+                type="button"
+              >
+                To Upper Case
+              </button>
+              <button
+                class="btn btn-outline-secondary"
+                id="all-to-lover-case-button"
+                type="button"
+              >
+                To Lower Case
+              </button>
+              <button
+                class="btn btn-outline-secondary"
+                id="first-to-upper-case-button"
+                type="button"
+              >
+                First Upper Case
+              </button>
+              <button
+                class="btn btn-outline-secondary"
+                id="first-to-lower-case-button"
+                type="button"
+              >
+                First Lower Case
+              </button>
+            </div>
+          </li>
+        </ul>
+        <ul class="list-group m-1">
+          <li class="list-group-item list-group-item-secondary">
+            Paspaudus mygtuka patikrinkite ivestas reiksmes ir jeigu reikia
+            parodykite klaidu pranesimus
+            <ul>
+              <li>Element show/hide</li>
+              <li>Class add/remove</li>
+            </ul>
+          </li>
+          <li class="list-group-item">
+            <div class="mb-3 d-flex flex-row">
+              <label for="email" class="form-label col-3">Email</label>
+              <div class="col-9">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email-imput"
+                  aria-describedby="emailHelp"
+                />
+                <div class="invalid-feedback">Please enter email.</div>
+                <div class="valid-feedback">Looks good!</div>
+              </div>
+            </div>
+            <div class="mb-3 d-flex flex-row col-12">
+              <label for="phoneNumber" class="form-label col-3"
+                >Phone Number</label
+              >
+              <div class="col-9">
+                <input type="numeric" class="form-control" id="phone-number" />
+                <div class="invalid-feedback">Please enter phone number.</div>
+                <div class="valid-feedback">Looks good!</div>
+              </div>
+            </div>
+            <div class="col-12">
+              <button
+                type="button"
+                id="send-form"
+                class="btn btn-outline-dark offset-md-3"
+              >
+                Save
+              </button>
+            </div>
+          </li>
+        </ul>
+        <ul class="list-group m-1">
+          <li class="list-group-item list-group-item-secondary">
+            Paspaudzius mygtuka uzblokuokite/atblokuokite
+            <span class="text-danger">input</span>
+          </li>
+          <li class="list-group-item">
+            <div class="input-group mb-3">
+              <button
+                class="btn btn-outline-danger"
+                type="button"
+                id="block-button"
+              >
+                Block
+              </button>
+              <input
+                type="text"
+                class="form-control"
+                placeholder=""
+                aria-label="Example text with button addon"
+                aria-describedby="button-addon1"
+              />
+              <button
+                class="btn btn-outline-success"
+                type="button"
+                id="unblock-button"
+              >
+                Unblock
+              </button>
+            </div>
+          </li>
+        </ul>
+        <ul class="list-group m-1">
+          <li class="list-group-item list-group-item-secondary">
+            Uzvedus ant paveiksliuko pakeiskite jy
+            <ul>
+              <li>
+                <a href="https://i.imgur.com/PLDVxza.jpg"
+                  >https://i.imgur.com/PLDVxza.jpg</a
+                >
+              </li>
+              <li>
+                <a href="https://i.imgur.com/0DElr0H.jpg"
+                  >https://i.imgur.com/0DElr0H.jpg</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li class="list-group-item d-flex justify-content-center">
+            <img
+              id="monkey-business"
+              src="https://i.imgur.com/PLDVxza.jpg"
+              alt="monkey"
+            />
+          </li>
+        </ul>
+        <ul class="list-group m-1">
+          <li class="list-group-item list-group-item-secondary">
+            Paspaudzius ant migtuko turi iskristi meniu su punktais. Paspaudus
+            punkta turi ivykti veiksmas.
+          </li>
+          <li class="list-group-item">A second item</li>
+        </ul>
+        <ul class="list-group m-1">
+          <li class="list-group-item list-group-item-secondary">
+            paspaudus mygtuka parodykite informacija apie save modaliniame lange
+          </li>
+          <li class="list-group-item d-flex justify-content-center">
+            <button type="button" class="btn btn-primary" id="launch-modal">
+              Launch modal
+            </button>
+          </li>
+        </ul>
+      </div>
+    </main>
+
     <script type="text/javascript" src="main.js"></script>
   </body>
 </html>
