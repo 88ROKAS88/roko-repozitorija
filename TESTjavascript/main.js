@@ -73,6 +73,7 @@ function showError(imput, valid, invalid) {
 sendForm.addEventListener("click", function () {
   //email validation
 
+  //https://stackoverflow.com/questions/46155/how-can-i-validate-an-email-address-in-javascript
   if (emailImput.value.match(/\S+@\S+\.\S+/)) {
     showError(emailImput, imputValid1, imputInvalid1);
   } else {
