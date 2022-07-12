@@ -1,14 +1,19 @@
+function findName(id, names) {
+  for (let i = 0; i < names.length; i++) {
+    if (id == names[i]["id"]) {
+      return names[i]["name"];
+    }
+  }
+}
 //bootstrap
 const tbody = document.querySelector("#tbody");
-function bootstrap(stuff) {
-  console.log("work?");
+function bootstrap(stuff, names) {
   let string = "";
   for (let i = 0; i < stuff.length; i++) {
-    console.log(stuff);
     string += ` <tr>
-  <th scope="row">${stuff[i][userid]}</th>
-  <td>Mark</td>
-  <td>Otto</td>
+  <th scope="row">${stuff[i]["id"]}</th>
+  <td>${findName(stuff[i]["userId"], names)}</td>
+  <td>${stuff[i]["title"]}</td>
 </tr>`;
   }
   tbody.innerHTML = string;
@@ -30,28 +35,49 @@ const promiseFunctionMayby = () => {
     console.log("still works1");
     fetch("https://jsonplaceholder.typicode.com/posts")
       .then((response) => response.json())
-      .then((data) => console.log(data));
-    console.log("still works2", data);
+      .then((data) => {
+        console.log(data);
+        resolve(data);
+      });
+    console.log("still works2");
     // resolve(response);
 
-    if (data) {
-      console.log("still works3");
-      resolve(data); // => then
-    } else {
-      reject("something went wrong"); // => catch
-    }
+    // if (data) {
+    //   console.log("still works3");
+    //   resolve(data); // => then
+    // } else {
+    //  reject("something went wrong"); // => catch
+    // }
   });
 };
 
+/// second promise ??! have no idea what Im doing ...
+const secondPromiseFunctionMayby = () => {
+  console.log("someting something");
+
+  return new Promise(function (resolve, reject) {
+    console.log("still works0");
+
+    console.log("still works1");
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        resolve(data);
+      });
+    console.log("still works2");
+  });
+};
 // execution
 
 document?.querySelector("button").addEventListener("click", async function () {
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch
   try {
     let response = await promiseFunctionMayby();
-
+    let response2 = await secondPromiseFunctionMayby();
+    console.log(response2);
     console.log("success", response);
-    bootstrap(response);
+    bootstrap(response, response2);
   } catch (err) {
     console.warn(err.message);
   }
