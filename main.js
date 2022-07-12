@@ -27,19 +27,13 @@ function bootstrap(stuff, names) {
 
 /// promise ??! have no idea what Im doing ...
 const promiseFunctionMayby = () => {
-  console.log("someting something");
-
   return new Promise(function (resolve, reject) {
-    console.log("still works0");
-
-    console.log("still works1");
     fetch("https://jsonplaceholder.typicode.com/posts")
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         resolve(data);
       });
-    console.log("still works2");
+
     // resolve(response);
 
     // if (data) {
@@ -53,19 +47,12 @@ const promiseFunctionMayby = () => {
 
 /// second promise ??! have no idea what Im doing ...
 const secondPromiseFunctionMayby = () => {
-  console.log("someting something");
-
   return new Promise(function (resolve, reject) {
-    console.log("still works0");
-
-    console.log("still works1");
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         resolve(data);
       });
-    console.log("still works2");
   });
 };
 // execution
