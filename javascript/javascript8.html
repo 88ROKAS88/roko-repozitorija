@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript 8</title>
+
+    <style>
+      #slider {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      #slider-section {
+        width: 200px;
+        height: 200px;
+        border: 1px solid black;
+      }
+      #clock-section {
+        height: 300px;
+        width: 100%;
+        border: 1px solid black;
+        overflow: auto;
+      }
+      #clock {
+        font-size: 50px;
+      }
+      header {
+        height: 50px;
+        width: 100%;
+        border: 1px solid black;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+      #hand-burger {
+        background: black;
+        width: 50px;
+        height: 50px;
+      }
+      #hand-burger:hover {
+        background: gray;
+      }
+      nav {
+        display: inline;
+      }
+      .nav-item {
+        padding: 5px;
+      }
+      a {
+        color: black;
+        text-transform: uppercase;
+        font-weight: bolder;
+        text-decoration: none;
+      }
+      a:hover {
+        color: gray;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a class="nav-item" href="#">link1</a>
+        <a class="nav-item" href="#">link2</a>
+        <a class="nav-item" href="#">link3</a>
+        <a class="nav-item" href="#">link4</a>
+        <a class="nav-item" href="#">link5</a>
+      </nav>
+      <div id="hand-burger"></div>
+    </header>
+    <main>
+      <section id="slider-section">
+        <img
+          src="old/Užduotis Nr. 2/assets/img4.jpg"
+          id="slider"
+          alt="slider"
+        />
+      </section>
+      <section id="clock-section"><h1 id="clock"></h1></section>
+      <section>
+        <form id="form1" action="/action_page.php">
+          <label for="fname">First name:</label>
+          <input type="text" id="fname" name="fname" /><br />
+          <label for="agei">Age:</label>
+          <input type="number" id="agei" name="agei" /><br />
+          <label for="email">Enter your email:</label>
+          <input type="email" id="email" name="email" />
+          <input type="submit" value="Submit" />
+        </form>
+        <h1 id="screen"></h1>
+      </section>
+    </main>
+    <script>
+      //Header
+      const handburger = document.querySelector("#hand-burger");
+      const navigation = document.querySelector("nav");
+      function navigationDisplay() {
+        let width = window.innerWidth;
+        if (width < 500) {
+          handburger.style.display = "block";
+          navigation.style.display = "none";
+        } else {
+          handburger.style.display = "none";
+          navigation.style.display = "block";
+        }
+      }
+      handburger.addEventListener("click", (e) => {
+        if (window.getComputedStyle(navigation).display == "block") {
+          navigation.style.display = "none";
+        } else {
+          navigation.style.display = "block";
+        }
+      });
+      console.log(
+        "display",
+        window.getComputedStyle(handburger).display == "block"
+      );
+      navigationDisplay();
+      window.onresize = navigationDisplay;
+      //First section - image "slider"
+      const slider = document.querySelector("#slider");
+      const pictures = ["img1.jpg", "img2.jpg", "img3.jpg"];
+      let pictutesArrayIndex = 0;
+      function changePicture() {
+        slider.src =
+          "old/Užduotis Nr. 2/assets/" + pictures[pictutesArrayIndex];
+        pictutesArrayIndex++;
+        if (pictutesArrayIndex > pictures.length - 1) {
+          pictutesArrayIndex = 0;
+        }
+      }
+      setInterval(changePicture, 2000);
+      //Second section - "clock"
+      const clock = document.querySelector("#clock");
+      zeroToNineteen = [
+        " ",
+        "viena",
+        "dvi",
+        "trys",
+        "keturios",
+        "penkios",
+        "sesios",
+        "septynios",
+        "astuonios",
+        "devynios",
+        "desim",
+        "vienuolika",
+        "dvylika",
+        "trylika",
+        "keturiolika",
+        "penkiolika",
+        "sesiolika",
+        "septiniolika",
+        "astuoniolika",
+        "deviniolika",
+      ];
+      twentyToSixty = [
+        "",
+        "",
+        "dvidesim",
+        "trisdesim",
+        "keturiasdesim",
+        "penkiasdesim",
+      ];
+      function numbersToWords(num) {
+        if (num < 20) {
+          return zeroToNineteen[num];
+        }
+        num = num.toString();
+        firstNum = num[0];
+        secondNum = num[1];
+        return twentyToSixty[+firstNum] + zeroToNineteen[+secondNum];
+      }
+      function getTime() {
+        const today = new Date();
+        let h = today.getHours();
+        let m = today.getMinutes();
+        let s = today.getSeconds();
+        clock.innerText = `${h}:${m}:${s} ${numbersToWords(
+          h
+        )} VAL. ${numbersToWords(m)} MIN. ${numbersToWords(s)} SEK.`;
+      }
+      console.log(getTime());
+      setInterval(getTime, 1000);
+      //Third Section - "form"
+      const screen = document.querySelector("#screen");
+      document.getElementById("form1").addEventListener("submit", function () {
+        let age = document.getElementById("agei")?.value;
+        let firstName = document.getElementById("fname").value;
+        let email = document.getElementById("email").value;
+        console.log(age, email, firstName);
+        let innerText = document.createTextNode("ERROR");
+        if (age && firstName && email) {
+          innerText = document.createTextNode(
+            `HELLO MISTER ${firstName} ! Your registration has been sucessfull !`
+          );
+        }
+        screen.innerHTML = " ";
+        screen.appendChild(innerText);
+      });
+    </script>
+  </body>
+</html>
