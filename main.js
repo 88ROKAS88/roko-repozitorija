@@ -19,11 +19,11 @@ function bootstrap(stuff, names) {
   tbody.innerHTML = string;
 }
 //function get posts normal stuff...
-function getPosts() {
-  fetch("https://jsonplaceholder.typicode.com/posts")
-    .then((response) => response.json())
-    .then((data) => console.log(data));
-}
+//function getPosts() {
+// fetch("https://jsonplaceholder.typicode.com/posts")
+//   .then((response) => response.json())
+//   .then((data) => console.log(data));
+//}
 
 /// promise ??! have no idea what Im doing ...
 const promiseFunctionMayby = () => {
