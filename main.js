@@ -26,17 +26,17 @@ const promiseFunctionMayby = () => {
 
   return new Promise(function (resolve, reject) {
     console.log("still works0");
-    let result = [];
+
     console.log("still works1");
     fetch("https://jsonplaceholder.typicode.com/posts")
       .then((response) => response.json())
-      .then((data) => (result = data)); //console.log(data));
+      .then((data) => console.log(data));
     console.log("still works2", data);
     // resolve(response);
 
-    if (result) {
+    if (data) {
       console.log("still works3");
-      resolve(result); // => then
+      resolve(data); // => then
     } else {
       reject("something went wrong"); // => catch
     }
