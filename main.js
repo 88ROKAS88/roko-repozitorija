@@ -1,7 +1,7 @@
 function findName(id, names) {
   for (let i = 0; i < names.length; i++) {
     if (id == names[i]["id"]) {
-      return names[i]["name"];
+      return names[i]["username"];
     }
   }
 }
