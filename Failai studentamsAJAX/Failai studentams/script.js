@@ -124,12 +124,7 @@ function loadPostsXHR() {
 //NEW VERSION AJAX (fetch())
 // -- Getting data
 function loadPostsFETCH() {
-  if (getFetch) {
-    getFetch("http://localhost:8080/posts").then((data) => fillTable(data));
-    console.log("suveike", data);
-  } else {
-    console.error(`Function "${getFetch}" not found`);
-  }
+  getFetch(JSONPLACEHOLDER_URI).then((data) => console.log(data));
 }
 
 // -- Sending data
