@@ -13,7 +13,9 @@ app.get("/os", (req, res) => {
 });
 
 app.get("/cpu", (req, res) => {
-  res.send(os.cpus());
+  let threds = os.cpus().length;
+  let cpuModel = os.cpus()[0].model;
+  res.send("threads: " + threds + " CPU model: " + cpuModel);
 });
 
 app.get("/ram", (req, res) => {
