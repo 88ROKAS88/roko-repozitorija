@@ -17,7 +17,8 @@ app.get("/cpu", (req, res) => {
 });
 
 app.get("/ram", (req, res) => {
-  res.send(os.totalmem());
+  let value1 = os.totalmem();
+  res.send("os.totalmem() => " + value1);
 });
 
 app.listen(port, () => {
